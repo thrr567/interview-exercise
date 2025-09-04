@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { Injectable } from '@angular/core';
 
 export interface OrdersItem {
   id: number;
@@ -421,6 +422,7 @@ const EXAMPLE_DATA: OrdersItem[] = [
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
+@Injectable()
 export class OrdersDataSource extends DataSource<OrdersItem> {
   data: OrdersItem[] = EXAMPLE_DATA;
   paginator: MatPaginator | undefined;
